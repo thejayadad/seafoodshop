@@ -1,12 +1,15 @@
 'use client'
-import { Inter } from 'next/font/google'
+import { Inter, Saira } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/client/Nabar/Navbar'
+import Navbar from '@/components/client/Navbar/Navbar'
 import Footer from '@/components/client/Footer/Footer'
 import { motion } from 'framer-motion';
+import AuthProvider from '@/SessionProvider'
 
 
 const inter = Inter({ subsets: ['latin'] })
+const saira = Saira({   weight: '400',
+subsets: ['latin'] })
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -16,20 +19,22 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='transition-all ease-in'>
-        <Navbar />
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 50 }}
-          transition={{ duration: 0.5 }}
-         >
-
+      <body className={saira.className}>
+      <AuthProvider>
+      <Navbar />
+      <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      transition={{ duration: 0.5 }}
+      >
+        <div className='min-h-screen'>
         {children}
+        </div>
         </motion.div>
         <Footer />
-
-        </body>
+      </AuthProvider>
+      </body>
     </html>
   )
 }

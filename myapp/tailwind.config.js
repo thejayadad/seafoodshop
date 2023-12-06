@@ -7,21 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#3b89af",
-        headingColor: "#63b7d6",
-        cartNumBg: "#e80013",
-        darkBlue: '#363a48',
-        textColor: "#515151",
-        cardOverlay: "rgba(256, 256, 256, 0.4)",
-        btnOverlay: "rgba(255, 255, 255, 0.8)",
-        lightGray: "#a4ccd0",
-        containerbg: "rgba(255, 131, 0, 0.04)",
-        cartBg: "#282a2c",
-        cartItem: "#2e3033",
-        cartTotal: "#343739",
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      display: ["group-hover"]
     },
   },
   plugins: [],
