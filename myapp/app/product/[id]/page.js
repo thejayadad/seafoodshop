@@ -20,7 +20,7 @@ const SingleProduct = (ctx) => {
 }, [])
 
   if (!product) {
-    return <div>Loading...</div>; 
+    return <div className='text-center'>Loading...</div>; 
   }
 
   return (
@@ -46,7 +46,7 @@ const SingleProduct = (ctx) => {
         >
           <div>
             <h2 className='text-3xl font-semibold mb-2'>{product.name}</h2>
-            <p className='text-gray-700 mb-4'>{product.description}</p>
+            <p className='text-gray-700 mb-4'>{product.desc}</p>
             <div className='flex items-center'>
               <span className='text-lg font-bold text-gray-800 mr-4'>
                 ${product.price}

@@ -5,8 +5,10 @@ import Navbar from '@/components/client/Navbar/Navbar'
 import Footer from '@/components/client/Footer/Footer'
 import { motion } from 'framer-motion';
 import AuthProvider from '@/SessionProvider'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 
-
+import {persistor, store} from "../redux/store"
 
 
 
@@ -23,6 +25,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={saira.className}>
+      <Provider store={store}>
+      <PersistGate persistor={persistor}>
       <AuthProvider>
       <Navbar />
       <motion.div
@@ -38,6 +42,8 @@ export default function RootLayout({ children }) {
         <Footer />
 
       </AuthProvider>
+      </PersistGate>
+      </Provider>
       </body>
     </html>
   )
