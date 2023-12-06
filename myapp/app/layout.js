@@ -7,6 +7,9 @@ import { motion } from 'framer-motion';
 import AuthProvider from '@/SessionProvider'
 
 
+
+
+
 const inter = Inter({ subsets: ['latin'] })
 const saira = Saira({   weight: '400',
 subsets: ['latin'] })
@@ -33,6 +36,7 @@ export default function RootLayout({ children }) {
         </div>
         </motion.div>
         <Footer />
+
       </AuthProvider>
       </body>
     </html>
